@@ -7,7 +7,7 @@ const fs = require('fs');
   try {
     await driver.get('https://municipia.ayuntamiento.tech/cloud/login');
 
-    // Ingresar credenciales inválidas
+    // Ingresar credenciales invalidas
     await driver.findElement(By.name('usuario')).sendKeys('usuarioFalso');
     await driver.findElement(By.name('clave')).sendKeys('7258375', Key.RETURN);
 
