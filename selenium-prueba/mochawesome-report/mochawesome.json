@@ -1,0 +1,486 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 0,
+    "passes": 0,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-04-12T01:01:39.017Z",
+    "end": "2025-04-12T01:03:59.107Z",
+    "duration": 140090,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 10,
+    "hasOther": true,
+    "skipped": 5,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "aa7dfbd2-fd7e-46fd-8ec9-0d22413e732c",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f3ec1c16-cfa6-4394-a77e-eab76e89367f",
+          "title": "Login Exitoso",
+          "fullFile": "C:\\Users\\cYt municipia\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Programacion 3\\tarea 4\\selenium-prueba\\tests\\loginExitoso.js",
+          "file": "\\tests\\loginExitoso.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook for \"iniciar sesion exitosamente\"",
+              "fullTitle": "Login Exitoso \"before all\" hook for \"iniciar sesion exitosamente\"",
+              "timedOut": true,
+              "duration": 33047,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "driver = await new Builder().forBrowser('chrome').build();",
+              "err": {
+                "message": "Error: Timeout of 30000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\cYt municipia\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Programacion 3\\tarea 4\\selenium-prueba\\tests\\loginExitoso.js)",
+                "estack": "Error: Timeout of 30000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\cYt municipia\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Programacion 3\\tarea 4\\selenium-prueba\\tests\\loginExitoso.js)\n    at listOnTimeout (node:internal/timers:594:17)\n    at process.processTimers (node:internal/timers:529:7)",
+                "diff": null
+              },
+              "uuid": "7cb8c669-a9da-47e4-ad93-ffd2c20d2e1e",
+              "parentUUID": "f3ec1c16-cfa6-4394-a77e-eab76e89367f",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook for \"iniciar sesion exitosamente\"",
+              "fullTitle": "Login Exitoso \"after all\" hook for \"iniciar sesion exitosamente\"",
+              "timedOut": false,
+              "duration": 1,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {
+                "message": "TypeError: Cannot read properties of undefined (reading 'quit')",
+                "estack": "TypeError: Cannot read properties of undefined (reading 'quit')\n    at Context.<anonymous> (tests\\loginExitoso.js:15:18)\n    at process.processImmediate (node:internal/timers:491:21)",
+                "diff": null
+              },
+              "uuid": "c1b8f7dd-1892-420a-a1aa-3fd88ad6056f",
+              "parentUUID": "f3ec1c16-cfa6-4394-a77e-eab76e89367f",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "iniciar sesion exitosamente",
+              "fullTitle": "Login Exitoso iniciar sesion exitosamente",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get('https://municipia.ayuntamiento.tech/cloud/login');\nconst screenshot1 = await driver.takeScreenshot();\nfs.writeFileSync('selenium-prueba/screenshots/login.png', screenshot1, 'base64');\nawait driver.findElement(By.name('usuario')).sendKeys('vsanchez');\nawait driver.findElement(By.name('clave')).sendKeys('VSG0515', Key.RETURN);\nawait driver.sleep(3000);\nconst screenshot2 = await driver.takeScreenshot();\nfs.writeFileSync('selenium-prueba/screenshots/loginValido.png', screenshot2, 'base64');\nconst bodyText = await driver.findElement(By.tagName('body')).getText();\nassert.ok(bodyText.toLowerCase().includes('vsanchez') || bodyText.toLowerCase().includes('inicio'), 'Error en el Login.');",
+              "err": {},
+              "uuid": "515fc15d-0e23-4e85-a793-e2108201df6e",
+              "parentUUID": "f3ec1c16-cfa6-4394-a77e-eab76e89367f",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [
+            "515fc15d-0e23-4e85-a793-e2108201df6e"
+          ],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 30000
+        },
+        {
+          "uuid": "0a75a85b-4f8e-41d7-beb3-4a5162b2ab46",
+          "title": "Login fallido",
+          "fullFile": "C:\\Users\\cYt municipia\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Programacion 3\\tarea 4\\selenium-prueba\\tests\\loginFallido.js",
+          "file": "\\tests\\loginFallido.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook for \"Debe mostrar un mensaje de error con credenciales incorrectas\"",
+              "fullTitle": "Login fallido \"before all\" hook for \"Debe mostrar un mensaje de error con credenciales incorrectas\"",
+              "timedOut": true,
+              "duration": 15536,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "driver = await new Builder().forBrowser('chrome').build();\nawait driver.get('https://municipia.ayuntamiento.tech/cloud/login');",
+              "err": {
+                "message": "Error: Timeout of 15000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\cYt municipia\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Programacion 3\\tarea 4\\selenium-prueba\\tests\\loginFallido.js)",
+                "estack": "Error: Timeout of 15000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\cYt municipia\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Programacion 3\\tarea 4\\selenium-prueba\\tests\\loginFallido.js)\n    at listOnTimeout (node:internal/timers:594:17)\n    at process.processTimers (node:internal/timers:529:7)",
+                "diff": null
+              },
+              "uuid": "6a19633b-bd0c-4d37-9092-0eef6e03015b",
+              "parentUUID": "0a75a85b-4f8e-41d7-beb3-4a5162b2ab46",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook for \"Debe mostrar un mensaje de error con credenciales incorrectas\"",
+              "fullTitle": "Login fallido \"after all\" hook for \"Debe mostrar un mensaje de error con credenciales incorrectas\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {
+                "message": "TypeError: Cannot read properties of undefined (reading 'quit')",
+                "estack": "TypeError: Cannot read properties of undefined (reading 'quit')\n    at Context.<anonymous> (tests\\loginFallido.js:15:18)\n    at process.processImmediate (node:internal/timers:491:21)",
+                "diff": null
+              },
+              "uuid": "bd8ad48b-84bc-4b61-a6cc-25d86b309703",
+              "parentUUID": "0a75a85b-4f8e-41d7-beb3-4a5162b2ab46",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Debe mostrar un mensaje de error con credenciales incorrectas",
+              "fullTitle": "Login fallido Debe mostrar un mensaje de error con credenciales incorrectas",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.findElement(By.name('usuario')).sendKeys('usuarioFalso');\nawait driver.findElement(By.name('clave')).sendKeys('7258375', Key.RETURN);\nawait driver.sleep(2000);\nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('selenium-prueba/screenshots/loginInvalido.png', screenshot, 'base64');\nconst bodyText = await driver.findElement(By.tagName('body')).getText();\nconst hayError = bodyText.includes('credenciales') || bodyText.includes('error') || bodyText.toLowerCase().includes('incorrectos');\nassert(hayError, 'No se detecto un mensaje de error.');",
+              "err": {},
+              "uuid": "bd648f62-acfe-4d9f-acc4-ccd224cb5007",
+              "parentUUID": "0a75a85b-4f8e-41d7-beb3-4a5162b2ab46",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [
+            "bd648f62-acfe-4d9f-acc4-ccd224cb5007"
+          ],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 15000
+        },
+        {
+          "uuid": "17896d50-9a19-4266-8f8c-45a9cd830713",
+          "title": "Logout de la plataforma",
+          "fullFile": "C:\\Users\\cYt municipia\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Programacion 3\\tarea 4\\selenium-prueba\\tests\\logout.js",
+          "file": "\\tests\\logout.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook for \"Debe cerrar sesion correctamente\"",
+              "fullTitle": "Logout de la plataforma \"before all\" hook for \"Debe cerrar sesion correctamente\"",
+              "timedOut": true,
+              "duration": 30472,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "driver = await new Builder().forBrowser('chrome').build();\nawait driver.get('https://municipia.ayuntamiento.tech/cloud/login');",
+              "err": {
+                "message": "Error: Timeout of 30000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\cYt municipia\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Programacion 3\\tarea 4\\selenium-prueba\\tests\\logout.js)",
+                "estack": "Error: Timeout of 30000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\cYt municipia\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Programacion 3\\tarea 4\\selenium-prueba\\tests\\logout.js)\n    at listOnTimeout (node:internal/timers:594:17)\n    at process.processTimers (node:internal/timers:529:7)",
+                "diff": null
+              },
+              "uuid": "1eac497c-8b9d-4dab-b691-474c58d72874",
+              "parentUUID": "17896d50-9a19-4266-8f8c-45a9cd830713",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook for \"Debe cerrar sesion correctamente\"",
+              "fullTitle": "Logout de la plataforma \"after all\" hook for \"Debe cerrar sesion correctamente\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {
+                "message": "TypeError: Cannot read properties of undefined (reading 'quit')",
+                "estack": "TypeError: Cannot read properties of undefined (reading 'quit')\n    at Context.<anonymous> (tests\\logout.js:15:18)\n    at process.processImmediate (node:internal/timers:491:21)",
+                "diff": null
+              },
+              "uuid": "6a924f79-e4da-4e3c-b00b-e4b372c09907",
+              "parentUUID": "17896d50-9a19-4266-8f8c-45a9cd830713",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Debe cerrar sesion correctamente",
+              "fullTitle": "Logout de la plataforma Debe cerrar sesion correctamente",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.findElement(By.name('usuario')).sendKeys('vsanchez');\nawait driver.findElement(By.name('clave')).sendKeys('VSG0515', Key.RETURN);\nawait driver.wait(until.elementLocated(By.className('dropdown')), 10000);\nawait driver.findElement(By.className('dropdown')).click();\nawait driver.findElement(By.className('clip-exit')).click();\nawait driver.sleep(3000);\nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('selenium-prueba/screenshots/logout.png', screenshot, 'base64');\nconst currentUrl = await driver.getCurrentUrl();\nassert(currentUrl.includes('login'), 'No volvio al login despues del logout');",
+              "err": {},
+              "uuid": "2ad482db-9f77-4c66-a807-7966d2b9acea",
+              "parentUUID": "17896d50-9a19-4266-8f8c-45a9cd830713",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [
+            "2ad482db-9f77-4c66-a807-7966d2b9acea"
+          ],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 30000
+        },
+        {
+          "uuid": "a6124d8f-9878-4ef9-8345-028ffb9493b6",
+          "title": "Prueba de Perfil de Usuario",
+          "fullFile": "C:\\Users\\cYt municipia\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Programacion 3\\tarea 4\\selenium-prueba\\tests\\Perfil.js",
+          "file": "\\tests\\Perfil.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook for \"Debe acceder a mi perfil\"",
+              "fullTitle": "Prueba de Perfil de Usuario \"before all\" hook for \"Debe acceder a mi perfil\"",
+              "timedOut": true,
+              "duration": 30486,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "driver = await new Builder().forBrowser('chrome').build();",
+              "err": {
+                "message": "Error: Timeout of 30000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\cYt municipia\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Programacion 3\\tarea 4\\selenium-prueba\\tests\\Perfil.js)",
+                "estack": "Error: Timeout of 30000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\cYt municipia\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Programacion 3\\tarea 4\\selenium-prueba\\tests\\Perfil.js)\n    at listOnTimeout (node:internal/timers:594:17)\n    at process.processTimers (node:internal/timers:529:7)",
+                "diff": null
+              },
+              "uuid": "5e116283-7385-4a06-b963-6f2477a05bba",
+              "parentUUID": "a6124d8f-9878-4ef9-8345-028ffb9493b6",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook for \"Debe acceder a mi perfil\"",
+              "fullTitle": "Prueba de Perfil de Usuario \"after all\" hook for \"Debe acceder a mi perfil\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {
+                "message": "TypeError: Cannot read properties of undefined (reading 'quit')",
+                "estack": "TypeError: Cannot read properties of undefined (reading 'quit')\n    at Context.<anonymous> (tests\\Perfil.js:15:18)\n    at process.processImmediate (node:internal/timers:491:21)",
+                "diff": null
+              },
+              "uuid": "3d666ae0-bc1d-4f50-958e-99686691e119",
+              "parentUUID": "a6124d8f-9878-4ef9-8345-028ffb9493b6",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Debe acceder a mi perfil",
+              "fullTitle": "Prueba de Perfil de Usuario Debe acceder a mi perfil",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get('https://municipia.ayuntamiento.tech/cloud/login');\nawait driver.findElement(By.name('usuario')).sendKeys('vsanchez');\nawait driver.findElement(By.name('clave')).sendKeys('VSG0515', Key.RETURN);\nawait driver.wait(until.elementLocated(By.className('dropdown-toggle')), 10000);\nawait driver.findElement(By.className('dropdown-toggle')).click();\nawait driver.wait(until.elementLocated(By.className('clip-user-2')), 10000);\nawait driver.findElement(By.className('clip-user-2')).click();\nawait driver.wait(until.elementLocated(By.xpath(\"//*[contains(text(), 'Nombre')]\")), 5000);\nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('screenshots/perfilUsuario.png', screenshot, 'base64');\nassert.ok(true, \"La prueba se completo correctamente\");",
+              "err": {},
+              "uuid": "4f30d19f-df3f-4c7b-9ea6-3b1aeeb6274c",
+              "parentUUID": "a6124d8f-9878-4ef9-8345-028ffb9493b6",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [
+            "4f30d19f-df3f-4c7b-9ea6-3b1aeeb6274c"
+          ],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 30000
+        },
+        {
+          "uuid": "2bef6779-2a65-4e85-abf8-479ffbf0f1df",
+          "title": "Volver al inicio desde el perfil",
+          "fullFile": "C:\\Users\\cYt municipia\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Programacion 3\\tarea 4\\selenium-prueba\\tests\\volverInicio.js",
+          "file": "\\tests\\volverInicio.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook for \"Debe volver al inicio correctamente\"",
+              "fullTitle": "Volver al inicio desde el perfil \"before all\" hook for \"Debe volver al inicio correctamente\"",
+              "timedOut": true,
+              "duration": 30491,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "driver = await new Builder().forBrowser('chrome').build();\nawait driver.get('https://municipia.ayuntamiento.tech/cloud/login');",
+              "err": {
+                "message": "Error: Timeout of 30000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\cYt municipia\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Programacion 3\\tarea 4\\selenium-prueba\\tests\\volverInicio.js)",
+                "estack": "Error: Timeout of 30000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\cYt municipia\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Programacion 3\\tarea 4\\selenium-prueba\\tests\\volverInicio.js)\n    at listOnTimeout (node:internal/timers:594:17)\n    at process.processTimers (node:internal/timers:529:7)",
+                "diff": null
+              },
+              "uuid": "5e8c2851-8c38-4ae4-85cc-13bc41a8a779",
+              "parentUUID": "2bef6779-2a65-4e85-abf8-479ffbf0f1df",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook for \"Debe volver al inicio correctamente\"",
+              "fullTitle": "Volver al inicio desde el perfil \"after all\" hook for \"Debe volver al inicio correctamente\"",
+              "timedOut": false,
+              "duration": 1,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {
+                "message": "TypeError: Cannot read properties of undefined (reading 'quit')",
+                "estack": "TypeError: Cannot read properties of undefined (reading 'quit')\n    at Context.<anonymous> (tests\\volverInicio.js:15:18)\n    at process.processImmediate (node:internal/timers:491:21)",
+                "diff": null
+              },
+              "uuid": "d946966c-bcfe-48ab-b437-4306d3e4f85c",
+              "parentUUID": "2bef6779-2a65-4e85-abf8-479ffbf0f1df",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Debe volver al inicio correctamente",
+              "fullTitle": "Volver al inicio desde el perfil Debe volver al inicio correctamente",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.findElement(By.name('usuario')).sendKeys('vsanchez');\nawait driver.findElement(By.name('clave')).sendKeys('VSG0515', Key.RETURN);\nawait driver.wait(until.elementLocated(By.className('dropdown')), 10000);\nawait driver.findElement(By.className('dropdown')).click();\nconst perfilLink = await driver.wait(until.elementLocated(By.css('a[href*=\"/perfil\"]')), 5000);\nawait driver.wait(until.elementIsVisible(perfilLink), 5000);\nawait perfilLink.click();\nawait driver.wait(until.urlContains('/perfil'), 5000);\nawait driver.findElement(By.xpath(\"//*[contains(text(), 'Inicio')]\")).click();\nawait driver.sleep(3000);\nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('selenium-prueba/screenshots/volverInicio.png', screenshot, 'base64');\nconst currentUrl = await driver.getCurrentUrl();\nassert(currentUrl.includes('inicio'), 'No se pudo volver correctamente al inicio');",
+              "err": {},
+              "uuid": "3876a596-7d16-473e-8dbf-ca1f3e5075c7",
+              "parentUUID": "2bef6779-2a65-4e85-abf8-479ffbf0f1df",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [
+            "3876a596-7d16-473e-8dbf-ca1f3e5075c7"
+          ],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 30000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.1.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

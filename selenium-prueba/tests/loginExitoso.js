@@ -1,10 +1,21 @@
-const { Builder, By, Key, until } = require('selenium-webdriver');
+const { Builder, By, Key } = require('selenium-webdriver');
 const fs = require('fs');
+const assert = require('assert');
 
+describe('Login Exitoso', function () {
+  this.timeout(30000); // tiempo extra para evitar errores de timeout
 
-(async function loginTest() {
-  let driver = await new Builder().forBrowser('chrome').build();
-  try {
+  let driver;
+
+  before(async () => {
+    driver = await new Builder().forBrowser('chrome').build();
+  });
+
+  after(async () => {
+    await driver.quit();
+  });
+
+  it('iniciar sesion exitosamente', async () => {
     await driver.get('https://municipia.ayuntamiento.tech/cloud/login');
 
     const screenshot1 = await driver.takeScreenshot();
@@ -13,15 +24,13 @@ const fs = require('fs');
     await driver.findElement(By.name('usuario')).sendKeys('vsanchez');
     await driver.findElement(By.name('clave')).sendKeys('VSG0515', Key.RETURN);
 
-    await driver.sleep(3000); 
+    await driver.sleep(3000);
 
-    const screenshot = await driver.takeScreenshot();
-    fs.writeFileSync('selenium-prueba/screenshots/loginValido.png', screenshot, 'base64');
-    
-    console.log("Login exitoso!");
-  } catch (error) {
-    console.error("Error en la prueba:", error);
-  } finally {
-    await driver.quit();
-  }
-})();
+    const screenshot2 = await driver.takeScreenshot();
+    fs.writeFileSync('selenium-prueba/screenshots/loginValido.png', screenshot2, 'base64');
+
+    const bodyText = await driver.findElement(By.tagName('body')).getText();
+    assert.ok(bodyText.toLowerCase().includes('vsanchez') || bodyText.toLowerCase().includes('inicio'), 'Error en el Login.');
+  });
+});
+
