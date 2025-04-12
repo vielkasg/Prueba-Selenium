@@ -14,4 +14,4 @@ Este proyecto contiene pruebas automatizadas usando Selenium WebDriver para la p
 
 # Como ejecutar
 ```bash
-node tests/pruebaSelenium.js
+node selenium-prueba/tests/...
